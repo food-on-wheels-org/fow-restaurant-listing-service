@@ -54,7 +54,10 @@ pipeline {
                     def coverage = sh(
                         script: "echo ${response} | jq -r '.component.measures[0].value'",
                         returnStdout: true
-                    ).trim().toDouble()
+                    ).trim()
+
+                    echo "Raw jq output: '${coverageRaw}'"
+                    def coverageRaw = coverage ? coverage.toDouble() : 0.0
 
                     echo: "Coverage: ${coverage}"
 
