@@ -51,6 +51,8 @@ pipeline {
                         returnStdout: true
                     ).trim()
 
+                    echo "Response from curl: ${response}"
+
                     def coverage = sh(
                         script: """echo "${response}" | jq -r '.component.measures[0].value'""",
                         returnStdout: true
