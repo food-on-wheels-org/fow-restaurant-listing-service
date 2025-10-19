@@ -56,7 +56,7 @@ pipeline {
                         returnStdout: true
                     ).trim()
 
-                    echo "Raw jq output: '${coverageRaw}'"
+                    echo "Raw jq output: '${coverage}'"
                     def coverageRaw = coverage ? coverage.toDouble() : 0.0
 
                     echo: "Coverage: ${coverage}"
