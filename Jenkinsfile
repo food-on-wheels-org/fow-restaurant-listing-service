@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         /* We set this up in the Jenkins initially */
-        DOCKER_HUB_CREDENTIALS = credentials('DOCKER_HUB_CREDENTIAL')
+        DOCKER_HUB_CREDENTIALS = credentials('DOCKERHUB_CREDENTIAL')
         VERSION = "${env.BUILD_ID}"
     }
 
@@ -67,7 +67,7 @@ pipeline {
 
         stage('Docker Build and Push') {
             steps {
-                sh 'echo ${DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${DOCKER_HUB_CREDENTIALS_USR} -p ${DOCKER_HUB_CREDENTIALS_PSW}'
+                sh 'echo ${DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${DOCKER_HUB_CREDENTIALS_USR} --password-stdin}'
                 sh 'docker build -t tejassrivathsa/restaurant-listing-service:${VERSION} .'
                 sh 'docker push tejassrivathsa/restaurant-listing-service:${VERSION}'
             }
