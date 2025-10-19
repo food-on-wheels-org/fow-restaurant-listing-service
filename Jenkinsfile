@@ -47,7 +47,7 @@ pipeline {
 
                     /* Log into SonarQube with Sonar token and URL, then run the coverage */
                     def response = sh(
-                        script: """curl -s -H "Authorization: Bearer ${token}" "${sonarQubeUrl}/measures/component?component=${componentKey}&metricKeys=coverage" """,
+                        script: """curl -H "Authorization: Bearer ${token}" "${sonarQubeUrl}/measures/component?component=${componentKey}&metricKeys=coverage" """,
                         returnStdout: true
                     ).trim()
 
@@ -67,7 +67,7 @@ pipeline {
 
         stage('Docker Build and Push') {
             steps {
-                sh 'echo ${DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${DOCKER_HUB_CREDENTIALS_USR} --password-stdin}'
+                sh 'echo ${DOCKER_HUB_CREDENTIALS_PSW} | docker login -u ${DOCKER_HUB_CREDENTIALS_USR} --password-stdin'
                 sh 'docker build -t tejassrivathsa/restaurant-listing-service:${VERSION} .'
                 sh 'docker push tejassrivathsa/restaurant-listing-service:${VERSION}'
             }
