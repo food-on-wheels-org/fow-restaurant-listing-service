@@ -32,7 +32,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps{
-                sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=http://13.38.93.16:9000/ -Dsonar.login=squ_9a1b81f4b7356c253456cfe284eaed4246d02fa6'
+                sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=http://35.180.152.18:9000/ -Dsonar.login=squ_9a1b81f4b7356c253456cfe284eaed4246d02fa6'
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
             steps{
                 script{
                     def token = "squ_9a1b81f4b7356c253456cfe284eaed4246d02fa6"
-                    def sonarQubeUrl = "http://13.38.93.16:9000/api"
+                    def sonarQubeUrl = "http://35.180.152.18:9000/api"
                     /* The componentKey will always be a combination of groupId-artifactId */
                     def componentKey = "com.project.tejas:restaurantlisting"
                     def coverageThreshold = 80.0
