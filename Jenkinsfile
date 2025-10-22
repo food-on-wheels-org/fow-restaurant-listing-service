@@ -40,14 +40,14 @@ pipeline {
             steps{
                 script{
                     def token = "squ_0d5f8aef120abca5b084ad40d3d55e0493c84733"
-                    def sonarQubeUrl = "http://35.180.152.18:9000/"
+                    def sonarQubeUrl = "http://35.180.152.18:9000/api"
                     /* The componentKey will always be a combination of groupId-artifactId */
                     def componentKey = "com.project.tejas:restaurantlisting"
                     def coverageThreshold = 80.0
 
                     /* Log into SonarQube with Sonar token and URL, then run the coverage */
                     def response = sh(
-                        script: """curl -H "Authorization: Bearer ${token}" "${sonarQubeUrl}/api/measures/component?component=${componentKey}&metricKeys=coverage" """,
+                        script: """curl -H "Authorization: Bearer ${token}" "${sonarQubeUrl}/measures/component?component=${componentKey}&metricKeys=coverage" """,
                         returnStdout: true
                     ).trim()
 
