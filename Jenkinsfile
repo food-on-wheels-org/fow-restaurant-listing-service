@@ -49,7 +49,7 @@ pipeline {
                     def response = sh(
                         script: """
                             SONAR_TOKEN = '${token}'
-                            curl -H "Authorization: Bearer \$SONAR_TOKEN" "${sonarQubeUrl}/measures/component?component=${componentKey}&metricKeys=coverage"
+                            curl -H 'Authorization: Bearer \$SONAR_TOKEN' "${sonarQubeUrl}/measures/component?component=${componentKey}&metricKeys=coverage"
                                 """,
                         returnStdout: true
                     ).trim()
