@@ -30,7 +30,7 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2025.0.0</spring-cloud.version>
 		<sonar.exclusions> **/com/project/tejas/restaurantlisting/repo/** , **/com/project/tejas/restaurantlisting/dto/** , **/com/project/tejas/restaurantlisting/mapper/** ,
-			**/com/project/tejas/restaurantlisting/entity/** , **/com/project/tejas/restaurantlisting/RestaurantlistingApplication.java
+			**/com/project/tejas/restaurantlisting/entity/** , **/com/project/tejas/restaurantlisting/config/**, **/com/project/tejas/restaurantlisting/RestaurantlistingApplication.java
 		</sonar.exclusions>
 	</properties>
 	<dependencies>
