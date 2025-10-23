@@ -24,6 +24,11 @@ Spring Boot, Spring Data JPA, AWS RDS, MySQL, Eureka Client, Docker, Kubernetes,
 | POST | `/addRestaurant` | Add new restaurant |
 | GET | `/fetchRestaurantById/{id}` | Get restaurant by ID |
 
+
+## Future additions
+- Remove restaurant 
+
+
 ---
 
 ## Deployment
