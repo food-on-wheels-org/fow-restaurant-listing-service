@@ -13,7 +13,7 @@ A Spring Boot microservice managing restaurant metadata within the Food-on-Wheel
 ---
 
 ## Tech Stack
-Spring Boot, Spring Data JPA, AWS RDS, Eureka Client, Docker, Kubernetes, JUnit, SonarQube
+Spring Boot, Spring Data JPA, AWS RDS, MySQL, Eureka Client, Docker, Kubernetes, JUnit, Jenkins, SonarQube, ArgoCD
 
 ---
 
