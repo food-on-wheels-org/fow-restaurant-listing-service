@@ -29,12 +29,11 @@ Spring Boot, Spring Data JPA, AWS RDS, MySQL, Eureka Client, Docker, Kubernetes,
 - Remove restaurant 
 
 
-## Part of
-
-[food-on-wheels-org/README](https://github.com/food-on-wheels-org/README), the overview of the full application.
----
-
 ## Deployment
 Built and analyzed through Jenkins and SonarQube.  
 Image: `docker.io/tejassrivathsa/restaurant-listing-service:latest`  
 Synced to EKS through ArgoCD.
+
+
+## Part of
+[food-on-wheels-org/README](https://github.com/food-on-wheels-org/README), the overview of the full application.
